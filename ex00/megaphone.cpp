@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 23:20:35 by gabriel           #+#    #+#             */
-/*   Updated: 2024/06/27 23:20:38 by gabriel          ###   ########.fr       */
+/*   Updated: 2024/06/28 11:37:28 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
+/*
 void	magnifice(char *str)
 {
 	size_t	i;
@@ -26,6 +27,24 @@ void	magnifice(char *str)
 			character = str[i];
 		std::cout << character;
 		i++;
+	}
+}
+*/
+
+void	magnifice(std::string str)
+{
+	char					character;
+	std::string::iterator	it;
+
+	it = str.begin();
+	while (it != str.end())
+	{
+		if (*it  >= 'a' && *it <= 'z')
+			character = *it - 32;
+		else
+			character = *it;
+		std::cout << character;
+		it++;
 	}
 }
 

@@ -3,7 +3,8 @@ NAME	=	phonebook
 CPPFLAGS	+=	-Wall -Werror -Wextra -std=c++98 -MMD -MP
 
 SRC		=	PhoneBook	\
-			Contact
+			Contact		\
+			main
 
 HDR		=	PhoneBook.hpp	\
 			Contact.hpp
@@ -18,7 +19,7 @@ ${NAME}: ${OBJS}
 	c++ ${CPPFLAGS} ${OBJS} -o ${NAME}
 
 %.o:%.cpp Makefile
-	c++	${CPPFLAGS} -c $< -o $@
+	c++ ${CPPFLAGS} -c $< -o $@
 
 -include ${DEPS}
 
