@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 12:01:40 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/06/28 13:32:37 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/07/24 00:03:49 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ class PhoneBook
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void		add(Contact contact);
-		Contact&	search(size_t _index);
+		void		add(void);
+		void		search(void);
 	private:
-		Contact contacts[8];
-		size_t  index;
+		Contact 	contacts[8];
+		size_t  	total;
+		std::string	format_string(std::string unformated);
+		void		print_contact_resume(void);
+		void		print_contact(size_t index);
 };
 
 

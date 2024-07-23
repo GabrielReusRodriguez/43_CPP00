@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 12:19:34 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/06/28 13:25:57 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/07/23 23:25:44 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,59 +22,12 @@
 
 void	add_contact(PhoneBook &phonebook)
 {
-	std::string first_name;
-	std::string	last_name;
-	std::string	nickname;
-	std::string	phone_number;
-	std::string	darkest_secret;
-	Contact		contact;
-	
-	std::cout << "\tEnter the first name: ";
-	std::getline(std::cin, first_name);
-	if (first_name.empty())
-	{
-		std::cout << "\tA saved contact cannot have empty fields." << std::endl;
-		return ;
-	}
-	std::cout << "\tEnter the last name: ";
-	std::getline(std::cin, last_name);
-	if (last_name.empty())
-	{
-		std::cout << "\tA saved contact cannot have empty fields." << std::endl;
-		return ;
-	}
-	std::cout << "\tEnter the nickname: ";
-	std::getline(std::cin, nickname);
-	if (nickname.empty())
-	{
-		std::cout << "\tA saved contact cannot have empty fields." << std::endl;
-		return ;
-	}
-	std::cout << "\tEnter the phone number: ";
-	std::getline(std::cin, phone_number);
-	if (phone_number.empty())
-	{
-		std::cout << "\tA saved contact cannot have empty fields." << std::endl;
-		return ;
-	}
-	std::cout << "\tEnter the darkest secret: ";
-	std::getline(std::cin, darkest_secret);
-	if (darkest_secret.empty())
-	{
-		std::cout << "\tA saved contact cannot have empty fields." << std::endl;
-		return ;
-	}
-	contact.set_first_name(first_name);
-	contact.set_last_name(last_name);
-	contact.set_nickname(nickname);
-	contact.set_phone_number(phone_number);
-	contact.set_darkest_secret(darkest_secret);
-	phonebook.add(contact);
+	phonebook.add();
 }
 
-void	search_contact(void)
-{
-	
+void	search_contact(PhoneBook phonebook)
+{	
+	phonebook.search();
 }
 
 int main(int argc, char **argv)
@@ -94,7 +47,7 @@ int main(int argc, char **argv)
 		if (line.compare(CMD_ADD) == 0)
 			add_contact(phonebook);
 		if (line.compare(CMD_SEARCH) == 0)
-			search_contact();
+			search_contact(phonebook);
 	}
 	return (0);
 }
